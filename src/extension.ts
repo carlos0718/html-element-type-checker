@@ -72,38 +72,6 @@ const inlineElements = new Set([
 
 export function activate(context: vscode.ExtensionContext) {
 	// Listener para detectar cambios en la selección del editor
-	vscode.window.onDidChangeTextEditorSelection((event) => {
-		const editor = vscode.window.activeTextEditor;
-
-		if (!editor || editor.document.languageId !== "html") {
-			return;
-		}
-
-		const document = editor.document;
-		const selection = editor.selection;
-		const selectedText = document.getText(selection).trim();
-
-		// Verificar si el texto seleccionado es una etiqueta HTML
-		const tag = selectedText.replace(/[<>/]/g, ""); // Limpiar <, >, /
-
-		if (!tag) {
-			return;
-		}
-
-		let elementType = "";
-		if (blockElements.has(tag)) {
-			elementType = "Block-level element";
-		} else if (inlineElements.has(tag)) {
-			elementType = "Inline-level element";
-		}
-
-		if (elementType) {
-			vscode.window.showInformationMessage(`\`${tag}\` is a **${elementType}**.`);
-		} else {
-			vscode.window.showInformationMessage(`\`${tag}\` is not recognized as a block or inline element.`);
-		}
-	});
-
 	const disposable = vscode.window.onDidChangeTextEditorSelection((event) => {
 		const editor = vscode.window.activeTextEditor;
 
@@ -115,6 +83,9 @@ export function activate(context: vscode.ExtensionContext) {
 		const selection = editor.selection;
 		const selectedText = document.getText(selection).trim();
 
+		if (!selectedText) {
+			return;
+		}
 		// Verificar si el texto seleccionado es una etiqueta HTML
 		const tag = selectedText.replace(/[<>/]/g, ""); // Limpiar <, >, /
 
@@ -130,14 +101,11 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		if (elementType) {
-			vscode.window.showInformationMessage(`\`${tag}\` is a **${elementType}**.`);
-		} else {
-			vscode.window.showInformationMessage(`\`${tag}\` is not recognized as a block or inline element.`);
+			vscode.window.showInformationMessage(`\`${tag.toUpperCase()}\` is a **${elementType}**.`);
 		}
+		// Agregar el disposable correctamente al contexto de suscripciones
+		context.subscriptions.push(disposable);
 	});
-
-	// Agregar el disposable correctamente al contexto de suscripciones
-	context.subscriptions.push(disposable);
 }
 
 export function deactivate() {}
