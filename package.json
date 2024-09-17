@@ -2,7 +2,7 @@
 	"name": "html-element-type-checker",
 	"displayName": "html-element-type-checker",
 	"description": "show if an HTML element is block or inline",
-	"version": "0.0.1",
+	"version": "1.0.1",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
