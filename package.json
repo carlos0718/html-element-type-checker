@@ -3,12 +3,13 @@
 	"displayName": "html-element-type-checker",
 	"description": "show if an HTML element is block or inline",
 	"version": "0.0.1",
+	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/tu-usuario/tu-repositorio.git"
+		"url": "https://github.com/carlos0718/html-element-type-checker"
 	},
 	"engines": {
-		"vscode": "^1.93.0"
+		"vscode": "^1.91.0"
 	},
 	"categories": [
 		"Other"
@@ -62,7 +63,7 @@
 		"test": "vscode-test"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.93.0",
+		"@types/vscode": "^1.91.0",
 		"@types/mocha": "^10.0.7",
 		"@types/node": "20.x",
 		"@typescript-eslint/eslint-plugin": "^5.0.0",
