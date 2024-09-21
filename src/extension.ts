@@ -101,7 +101,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		if (elementType) {
-			vscode.window.showInformationMessage(`\`${tag.toUpperCase()}\` is a **${elementType}**.`);
+			vscode.window.showInformationMessage(`${tag.toUpperCase()} is a ${elementType}.`);
 		}
 		// Agregar el disposable correctamente al contexto de suscripciones
 		context.subscriptions.push(disposable);
