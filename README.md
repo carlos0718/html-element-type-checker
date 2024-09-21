@@ -23,3 +23,7 @@ Simplemente seleccioná una etiqueta HTML en tu código y la extensión te mostr
 ## Contribuir
 
 Si querés contribuir con mejoras o reportar problemas, podés hacer un fork de este repositorio y crear un pull request.
+
+## Descarga
+
+https://github.com/carlos0718/html-element-type-checker/releases/tag/v1.1.2
