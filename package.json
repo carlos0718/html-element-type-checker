@@ -5,6 +5,15 @@
 	"version": "1.1.2",
 	"license": "MIT",
 	"publisher": "Carlos-Jesus",
+	"keywords": [
+		"html",
+		"block",
+		"inline",
+		"element",
+		"vscode",
+		"extension",
+		"checker"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/carlos0718/html-element-type-checker"
