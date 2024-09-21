@@ -1,6 +1,6 @@
 {
-	"name": "html-tag-checker",
-	"displayName": "html-tag-checker",
+	"name": "tag-type-checker",
+	"displayName": "tag-type-checker",
 	"description": "show if an HTML element is block or inline",
 	"version": "1.1.2",
 	"license": "MIT",
